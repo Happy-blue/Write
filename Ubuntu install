@@ -1,0 +1,89 @@
+# Write Ubuntu install
+
+0. intro
+
+pem 경로 찾기 
+(cd 파일폴더명 | cd ..)
+
+SSH private key 입력하기
+
+
+1. poetry install
+
+curl -sSL https://install.python-poetry.org | python3 -
+
+nano ~/.bashrc
+
+export PATH="/home/sammy/.local/bin:$PATH" 입력 후 Ctrl+X 눌러 종료 후 Y 누르고 변경 사항 저장하기
+
+현재 세션에 변경 사항 적용
+source ~/.bashrc 
+
+poetry 버전확인
+poetry --version
+
+
+2. poetry project setting
+
+poetry new 프로젝트명
+
+cd 프로젝트명
+
+파일 유무 확인
+ls
+
+nano pyproject.toml
+
+poetry add requests
+
+django 설치
+sudo apt install python3-django
+
+django 버전 확인
+django-admin --version
+
+가상환경
+poetry shell
+
+django 가상환경 추가
+poetry add Django
+
+config 
+django-admin startproject config .
+
+전체 파일 확인
+ls -al
+
+3. port insert
+
+# cd 프로젝트명(혹시나 안되어있으면 하기)
+
+config경로
+cd config
+
+config 파일 확인
+ls
+
+settings 수정하기
+vi settings.py
+
+명령모드에서 입력모드로 바꾸기(Esc버튼 누르고-> i(insert) 누르기)
+
+ALLOWED_HOST = [] 괄호 안에 입력하기
+ALLOWED_HOST = ['내 IP', '*'] 
+
+저장하기(Esc버튼 누르고 :wq 입력 후 엔터)
+
+상위 폴더로 이동
+cd ..
+
+내용 변경했으니 저장하기
+python manage.py migrate
+
+aws 사이트 => 보안그룹 인바운드 규칙 추가
+
+python manage.py runserver 0:8000
+
+내 ip:8000 실행
+
+참고자료:https://www.digitalocean.com/community/tutorials/how-to-install-poetry-to-manage-python-dependencies-on-ubuntu-22-04
