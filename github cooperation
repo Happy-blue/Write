@@ -1,0 +1,35 @@
+### 코드 수정해서 공동저장소에 올리는 경로
+
+공동저장소 fork 해서 내 저장소로 복사
+Fork 받은 것을 git clone code주소 명령어! 
+git branch 새브랜치명
+git branch해서 branch 확인 후 (종료 명령어:wq)
+git switch 새브랜치명  => main에서 새브랜치명으로 옮겨옴
+코드 수정하고 끝나면
+git add .
+git status (=수정한 위치/수정한 파일 뜬다)
+git commit -m “내용”
+git push origin 새브랜치명
+=> 깃 나의 저장소에 가서 새브랜치명 클릭 후 올라간거 확인
+=> compare & pull request 누르고 
+=> 나의 새브랜치명에서 확인, 공동저장소로 옮겨가는 위치 확인 후 
+=> create pull request
+=> 공동저장소가서 확인 (관리자 권한일때 merge 가능)
+=> 공동저장소 pull request 클릭 
+=> (관리자 권한 지정되어) Merge pull request 클릭
+    (수정&첨가한 내 코드를 공동저장소에 덮는다)
+=> confirm merge 클릭 => 공동저장소에  merge 적용됨
+=> 내 저장소로 와서 sync fork 누르고 
+=> update branch 클릭(내 저장소에 수정한 부분 적용)
+=> 터미널 와서 git branch 눌러 확인 후 
+=> main으로 이동하기 (git switch main)
+=> main으로 왔는지 확인( git branch ) 
+=> git branch -D 새브런치명 (수정 올린 branch 삭제하기)
+=> git branch해서 확인
+=> vscode 소스 제어>풀,푸시>가져올 위치…>origin/main
+=> 수정한 부분도 vscode에 적용됨 
+
+=> github에서 branch 삭제 => branch 모인곳 클릭 삭제할 branch 옆 휴지통 클릭
+
+
+###끝!
